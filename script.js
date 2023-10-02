@@ -30,6 +30,7 @@ async function queryServer(query) {
 
         if (!request.ok) {
             console.error(`HTTP error! Status ${request.status}`);
+            alert(`Location not found! Please type another.`);
             return;
         }
 
