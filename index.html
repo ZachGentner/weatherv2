@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="flex-col">
 
     <main class="flex-col">
-        <div class="card">
         <form action="submit" id="form" autocomplete="off">
             <button>
                 <i class="fa-solid fa-magnifying-glass fa-xl"></i>
             </button>
             <input type="text" id="input" placeholder="Search">
         </form>
+        <div class="card">
 
 
         <div id="data">
@@ -25,17 +25,17 @@
             </h1>
             <h2 class="flex-row" id="condition">
                 <i class="fa-regular fa-sun"></i>
-                <p>Sunny</p>
+                <p>Clear</p>
             <h2 class="flex-row" id="temp">
-                <i style="color: orange" class="fa-solid fa-temperature-full"></i>
+                <i class="fa-solid fa-temperature-full"></i>
                 <p>72° <span class="unit">F</span></p>
             <h2 class="flex-row" id="temp-max">
                 <i style="color: red" class="fa-solid fa-temperature-arrow-up"></i>
-                <p>72° <span class="unit">F</span></p>
+                <p>76° <span class="unit">F</span></p>
             </h2>
             <h2 class="flex-row" id="temp-min">
                 <i style="color: blue" class="fa-solid fa-temperature-arrow-down"></i>
-                <p>72° <span class="unit">F</span></p>
+                <p>64° <span class="unit">F</span></p>
             </h2>
         </div>
     </div>

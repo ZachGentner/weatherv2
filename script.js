@@ -1,6 +1,7 @@
 // https://unsplash.com/photos/2E_dT65fyxo SUNNY
 // https://unsplash.com/photos/pbxwxwfI0B4 CLOUDY
 // https://unsplash.com/photos/1cJXplTxrmI STORM
+// https://unsplash.com/photos/Nw_D8v79PM4 RAIN
 
 
 const input = document.getElementById('input');
@@ -54,6 +55,9 @@ async function loadData(query) {
     temp.querySelector('p').innerText = `${Math.round(weather.main.temp)}° F`;
     tempMax.querySelector('p').innerText = `${Math.round(weather.main.temp_max)}° F`;
     tempMin.querySelector('p').innerText = `${Math.round(weather.main.temp_min)}° F`;
+
+    //Update background.
+    document.querySelector('body').style.backgroundImage = `url(${updateBackground(weather.weather[0].main)})`
 }
 
 function updateIcon(weather) {
@@ -61,11 +65,11 @@ function updateIcon(weather) {
         clear: 'fa-regular fa-sun',
         clouds: 'fa-solid fa-cloud',
         rain: 'fa-solid fa-cloud-showers-heavy',
-        storm: 'fa-solid fa-cloud-bolt',
+        thunderstorm: 'fa-solid fa-cloud-bolt',
         snow: 'fa-regular fa-snowflake',
         wind: 'fa-solid fa-wind',
         partlycloudy: 'fa-solid fa-cloud-sun',
-        scatteredshowers: 'fa-solid fa-cloud-sun-rain'
+        drizzle: 'fa-solid fa-cloud-sun-rain'
     }
 
     let result = 'fa-solid fa-question';
@@ -73,6 +77,29 @@ function updateIcon(weather) {
     Object.keys(icons).forEach(icon => {
         if (icon === weather.toLowerCase()) {
             result = icons[icon];
+        }
+    });
+
+    return result;
+}
+
+function updateBackground(weather) {
+    const backgrounds = {
+        clear: './sunny.jpg',
+        clouds: './clouds.jpg',
+        rain: './rain.jpg',
+        thunderstorm: './storm.jpg',
+        snow: './snow.jpg',
+        wind: './wind.jpg',
+        partlycloudy: './clouds.jpg',
+        drizzle: './storm.jpg'  
+    }
+
+    let result = './sunny.jpg';
+
+    Object.keys(backgrounds).forEach(background => {
+        if (background === weather.toLowerCase()) {
+            result = backgrounds[background];
         }
     });
 
