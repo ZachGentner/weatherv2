@@ -32,15 +32,9 @@ main {
 footer {
     height: 50px;
     width: 100%;
-    background-color: black;
-    opacity: .4;
+    background: rgb(0, 0, 0, .7);
     justify-content: center;
     align-items: center;
-}
-
-footer:hover {
-    opacity: 1;
-    background: rgb(0, 0, 0, .7);
 }
 
 footer a {
